@@ -6,17 +6,17 @@ module.exports = function check(str, bracketsConfig) {
             brackets += bracketsConfig[i][j];
         }
     }
-  
+
     //Создаём пустой стек
     let stack = [];
 
     //Перебираем всю строку str
-    for(let i; i < str.length; i++) {
+    for (let i = 0; i < str.length; i++) {
 
         //Берём символ
         let ch = str[i];
 
-        //Берём индекс символа
+        //Берём индекс символа в brackets
         let index = brackets.indexOf(ch);
 
         //Если закрывающая скобка и стек пуст
@@ -57,7 +57,7 @@ module.exports = function check(str, bracketsConfig) {
             }
         }
     }
-
+    
     //Проверяем, пуст ли стек
     if (stack.length !== 0)
         return false;
